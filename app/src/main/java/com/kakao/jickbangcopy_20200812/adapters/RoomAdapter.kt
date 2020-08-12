@@ -18,10 +18,10 @@ class RoomAdapter (
     val inf = LayoutInflater.from(mContext)
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        var tempRow = convertView
-        if (tempRow == null) tempRow = inf.inflate(R.layout.room_list_item, null)
+        var nullCheckConvertView = convertView
+        if (nullCheckConvertView == null) nullCheckConvertView = inf.inflate(R.layout.room_list_item, null)
         
-        val row =  tempRow!!
+        val row =  nullCheckConvertView!!
         return row
 //        return super.getView(position, convertView, parent)
     }
