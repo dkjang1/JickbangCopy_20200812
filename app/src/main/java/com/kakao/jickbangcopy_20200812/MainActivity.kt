@@ -9,6 +9,7 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+//        MVP,MVC방식
         setupEvents()
         setValues()
     }
@@ -19,7 +20,7 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setValues() {
-//      메인화면 값출력
+//        메인화면 값출력
 
     }
 }
