@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.kakao.jickbangcopy_20200812.R
 import com.kakao.jickbangcopy_20200812.datas.Room
+import java.text.NumberFormat
+import java.util.*
 
 // STEP4.Adapter(Kotlin Class)멤버변수 만들기
 class RoomAdapter(
@@ -32,7 +34,12 @@ class RoomAdapter(
 
         var data = mList[position]
 
-        priceTxt.text = data.price.toString()
+//        priceTxt.text = data.price.toString()
+        if (data.price >= 10000) {
+
+        } else {
+            priceTxt.text = NumberFormat.getInstance(Locale.KOREA).format(data.price)
+        }
         addressTxt.text = data.address
         descTxt.text = data.description
 
