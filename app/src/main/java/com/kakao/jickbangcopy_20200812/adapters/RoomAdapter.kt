@@ -36,7 +36,9 @@ class RoomAdapter(
 
 //        priceTxt.text = data.price.toString()
         if (data.price >= 10000) {
-
+            val hm = data.price / 10000 //정수계산은 정수
+            val thousand = data.price % 10000
+            priceTxt.text = "${hm}억 ${NumberFormat.getInstance(Locale.KOREA).format(thousand)}"
         } else {
             priceTxt.text = NumberFormat.getInstance(Locale.KOREA).format(data.price)
         }
