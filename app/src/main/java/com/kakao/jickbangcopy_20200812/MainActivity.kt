@@ -49,5 +49,7 @@ class MainActivity : BaseActivity() {
         mRoomAdapter = RoomAdapter(mContext, R.layout.room_list_item, mRoomList)
         roomListView.adapter = mRoomAdapter
 
+//        STEP7.데이터적용
+
     }
 }
