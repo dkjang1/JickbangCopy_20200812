@@ -9,7 +9,8 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        MVP,MVC방식
+//        SETP0.BaseActivity 만들기
+//        MVP(Minimum Viable Product),MVC(Model , View , Controller)
         setupEvents()
         setValues()
     }
