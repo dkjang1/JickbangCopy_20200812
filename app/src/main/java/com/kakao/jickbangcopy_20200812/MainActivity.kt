@@ -15,7 +15,7 @@ class MainActivity : BaseActivity() {
     //    STEP5.ArrayList 만들기
     val mRoomList = ArrayList<Room>()
 //    화면에 난타나는 방목록(배열)
-    
+
     //    STEP6.RoomAdapter 만들기
     lateinit var mRoomAdapter: RoomAdapter
 //    변수 객체대입(초기화)
@@ -35,7 +35,10 @@ class MainActivity : BaseActivity() {
 
 //        LIST1.리스트목록 항목을 클릭할경우
         roomListView.setOnItemClickListener { adapterView, view, i, l ->
+
+//            몇번째방인지
             val clickedRoom = mRoomList[i]
+
 //        LIST2.인텐트 보내기(putExtra > Room.kt > Room : Serializable)
             val roomIntent = Intent(mContext, ViewRoomDetailActivity::class.java)
             roomIntent.putExtra("roomInfo", clickedRoom)
@@ -58,8 +61,9 @@ class MainActivity : BaseActivity() {
         mRoomList.add(Room(57000, "서울시 동대문구", -2, "동대문구 방입니다."))
         mRoomList.add(Room(85000, "서울시 동대문구", 5, "동대문구 방입니다."))
 
-//        데이터초기화
+//        데이터초기화(초기화 변수를 초기화함:어떤화면,어떤모양,어떤목록)
         mRoomAdapter = RoomAdapter(mContext, R.layout.room_list_item, mRoomList)
+//        리스트뷰 어댑터(mRoomAdapter)연결
         roomListView.adapter = mRoomAdapter
 
 //        STEP7.데이터적용

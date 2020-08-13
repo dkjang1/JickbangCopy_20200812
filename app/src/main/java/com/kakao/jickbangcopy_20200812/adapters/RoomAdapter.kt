@@ -56,9 +56,8 @@ class RoomAdapter(
 //        addressAndFloorTxt.text = "${data.address}, ${floorStr}"
         addressAndFloorTxt.text = "${data.address}, ${data.getFormattedFloor()}"
 
-        descTxt.text = data.description
-//        var addressCity = data.address.substring(data.address.lastIndexOf(" ")+1)
-//        descTxt.text = "${addressCity} ${data.getFormattedFloor()} 방입니다"
+//        descTxt.text = data.description
+        descTxt.text = "${data.getCity()} ${data.getFormattedFloor()} 방입니다"
 
         return row
 //        return super.getView(position, convertView, parent)

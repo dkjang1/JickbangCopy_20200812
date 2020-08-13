@@ -28,7 +28,8 @@ class ViewRoomDetailActivity : BaseActivity() {
         val room = intent.getSerializableExtra("roomInfo") as Room
 
         priceTxt.text = room.getFormattedPrice()
-        descTxt.text = room.description
+//        descTxt.text = room.description
+        descTxt.text = "${room.getCity()} ${room.getFormattedFloor()} 방입니다"
         addressTxt.text = room.address
         floorTxt.text =  room.getFormattedFloor()
     }

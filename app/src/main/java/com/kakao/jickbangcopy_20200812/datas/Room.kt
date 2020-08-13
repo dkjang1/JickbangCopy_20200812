@@ -25,13 +25,19 @@ class Room(
     }
 
     fun getFormattedFloor(): String{
+        val floorStr: String
         if (this.floor >= 1) {
-            return "${this.floor}층"
+            floorStr = "${this.floor}층"
         } else if (this.floor < 0) {
-            return "지하 ${-this.floor}층"
+            floorStr = "지하 ${-this.floor}층"
         } else {
-            return "반지하"
+            floorStr = "반지하"
         }
+        return floorStr
+    }
+
+    fun getCity(): String{
+        return this.address.substring(this.address.lastIndexOf(" ")+1)
     }
 
 }
