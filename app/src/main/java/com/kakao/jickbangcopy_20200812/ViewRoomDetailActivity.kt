@@ -13,11 +13,12 @@ class ViewRoomDetailActivity : BaseActivity() {
     }
 
     override fun setupEvents() {
-        TODO("Not yet implemented")
+
     }
 
     override fun setValues() {
-        TODO("Not yet implemented")
+//        LIST3.인텐트 받아오기(getSerializableExtra)
+        val room = intent.getSerializableExtra("roomInfo")
     }
 
 }

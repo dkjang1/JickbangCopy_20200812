@@ -1,11 +1,14 @@
 package com.kakao.jickbangcopy_20200812
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import com.kakao.jickbangcopy_20200812.adapters.RoomAdapter
 import com.kakao.jickbangcopy_20200812.datas.Room
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.room_list_item.*
 
 class MainActivity : BaseActivity() {
 
@@ -29,6 +32,15 @@ class MainActivity : BaseActivity() {
     override fun setupEvents() {
 //        메인화면 이벤트 함수
 
+//        LIST1.리스트목록 항목을 클릭할경우
+        roomListView.setOnItemClickListener { adapterView, view, i, l ->
+            val clickedRoom = mRoomList[i]
+//        LIST2.인텐트 보내기(putExtra > Room.kt > Room : Serializable)
+            val roomIntent = Intent(mContext, ViewRoomDetailActivity::class.java)
+            roomIntent.putExtra("roomInfo", clickedRoom)
+            startActivity(roomIntent)
+
+        }
     }
 
     override fun setValues() {
