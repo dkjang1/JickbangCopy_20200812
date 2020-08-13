@@ -21,7 +21,6 @@ class ViewRoomDetailActivity : BaseActivity() {
 //            onBackPressed() //뒤로가기
 //        }
 
-
     }
 
     override fun setValues() {
@@ -31,6 +30,7 @@ class ViewRoomDetailActivity : BaseActivity() {
         priceTxt.text = room.getFormattedPrice()
         descTxt.text = room.description
         addressTxt.text = room.address
+        floorTxt.text =  room.getFormattedFloor()
     }
 
 }

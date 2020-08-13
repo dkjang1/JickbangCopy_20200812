@@ -9,7 +9,7 @@ import java.util.*
 class Room(
     val price: Int,
     val address: String,
-    var floor: Int,
+    val floor: Int,
     val description: String
 ) : Serializable {
 
@@ -21,6 +21,16 @@ class Room(
             return "${hm}억 ${thousandStr}"
         } else {
             return NumberFormat.getNumberInstance().format(this.price)
+        }
+    }
+
+    fun getFormattedFloor(): String{
+        if (this.floor >= 1) {
+            return "${this.floor}층"
+        } else if (this.floor < 0) {
+            return "지하 ${-this.floor}층"
+        } else {
+            return "반지하"
         }
     }
 

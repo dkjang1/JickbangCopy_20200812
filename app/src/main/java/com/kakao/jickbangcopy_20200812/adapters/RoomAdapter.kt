@@ -45,19 +45,20 @@ class RoomAdapter(
 //        }
         priceTxt.text = data.getFormattedPrice()
 
-        var floorStr: String
-        if (data.floor >= 1) {
-            floorStr = "${data.floor}층"
-        } else if (data.floor == 0) {
-            floorStr = "반지하"
-        } else {
-            floorStr = "지하 ${-data.floor}층"
-        }
-        addressAndFloorTxt.text = "${data.address}, ${floorStr}"
+//        var floorStr: String
+//        if (data.floor >= 1) {
+//            floorStr = "${data.floor}층"
+//        } else if (data.floor == 0) {
+//            floorStr = "반지하"
+//        } else {
+//            floorStr = "지하 ${-data.floor}층"
+//        }
+//        addressAndFloorTxt.text = "${data.address}, ${floorStr}"
+        addressAndFloorTxt.text = "${data.address}, ${data.getFormattedFloor()}"
 
         descTxt.text = data.description
 //        var addressCity = data.address.substring(data.address.lastIndexOf(" ")+1)
-//        descTxt.text = "${addressCity}, ${floorStr} 방입니다"
+//        descTxt.text = "${addressCity} ${data.getFormattedFloor()} 방입니다"
 
         return row
 //        return super.getView(position, convertView, parent)
