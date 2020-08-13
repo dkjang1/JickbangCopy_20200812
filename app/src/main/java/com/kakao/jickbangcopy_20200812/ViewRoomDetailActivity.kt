@@ -27,10 +27,10 @@ class ViewRoomDetailActivity : BaseActivity() {
     override fun setValues() {
 //        LIST3.인텐트 받아오기(getSerializableExtra + Casting(as Room))
         val room = intent.getSerializableExtra("roomInfo") as Room
-        addressTxt.text = room.address
+
+        priceTxt.text = room.getFormattedPrice()
         descTxt.text = room.description
-
-
+        addressTxt.text = room.address
     }
 
 }

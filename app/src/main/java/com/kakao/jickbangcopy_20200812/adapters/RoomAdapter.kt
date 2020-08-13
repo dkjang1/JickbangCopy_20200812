@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.kakao.jickbangcopy_20200812.R
 import com.kakao.jickbangcopy_20200812.datas.Room
+import kotlinx.android.synthetic.main.activity_view_room_detail.*
 import java.text.NumberFormat
 import java.util.*
 
@@ -35,13 +36,14 @@ class RoomAdapter(
         var data = mList[position]
 
 //        priceTxt.text = data.price.toString()
-        if (data.price >= 10000) {
-            val hm = data.price / 10000 //정수계산은 정수
-            val thousand = data.price % 10000
-            priceTxt.text = "${hm}억 ${NumberFormat.getInstance(Locale.KOREA).format(thousand)}"
-        } else {
-            priceTxt.text = NumberFormat.getInstance(Locale.KOREA).format(data.price)
-        }
+//        if (data.price >= 10000) {
+//            val hm = data.price / 10000 //정수계산은 정수
+//            val thousand = data.price % 10000
+//            priceTxt.text = "${hm}억 ${NumberFormat.getInstance(Locale.KOREA).format(thousand)}"
+//        } else {
+//            priceTxt.text = NumberFormat.getInstance(Locale.KOREA).format(data.price)
+//        }
+        priceTxt.text = data.getFormattedPrice()
 
         var floorStr: String
         if (data.floor >= 1) {
