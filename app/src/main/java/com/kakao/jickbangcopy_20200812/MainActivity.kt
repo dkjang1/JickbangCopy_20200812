@@ -14,10 +14,11 @@ class MainActivity : BaseActivity() {
 
     //    STEP5.ArrayList 만들기
     val mRoomList = ArrayList<Room>()
-
+//    화면에 난타나는 방목록(배열)
+    
     //    STEP6.RoomAdapter 만들기
     lateinit var mRoomAdapter: RoomAdapter
-
+//    변수 객체대입(초기화)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
