@@ -29,7 +29,7 @@ class RoomAdapter(
 
 //        STEP7.데이터 적용
         var priceTxt = row.findViewById<TextView>(R.id.priceTxt)
-        var addressTxt = row.findViewById<TextView>(R.id.addressTxt)
+        var addressAndFloorTxt = row.findViewById<TextView>(R.id.addressAndFloorTxt)
         var descTxt = row.findViewById<TextView>(R.id.descTxt)
 
         var data = mList[position]
@@ -42,8 +42,21 @@ class RoomAdapter(
         } else {
             priceTxt.text = NumberFormat.getInstance(Locale.KOREA).format(data.price)
         }
-        addressTxt.text = data.address
-        descTxt.text = data.description
+
+        var floorStr: String
+        if (data.floor >= 1) {
+            floorStr = "${data.floor}층"
+        } else if (data.floor == 0) {
+            floorStr = "반지하"
+        } else {
+            floorStr = "지하 ${-data.floor}층"
+        }
+        addressAndFloorTxt.text = "${data.address}, ${floorStr}"
+
+
+//        descTxt.text = data.description
+        var addressCity = data.address.substring(data.address.lastIndexOf(", ")+1)
+        descTxt.text = "${addressCity}, ${floorStr} 방입니다"
 
         return row
 //        return super.getView(position, convertView, parent)

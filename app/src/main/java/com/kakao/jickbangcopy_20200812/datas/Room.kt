@@ -5,7 +5,7 @@ package com.kakao.jickbangcopy_20200812.datas
 class Room(
     val price: Int,
     val address: String,
-    val floor: Int,
+    var floor: Int,
     val description: String
 ) {
 }
