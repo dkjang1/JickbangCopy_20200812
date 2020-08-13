@@ -19,13 +19,16 @@ class RoomAdapter(
     val mList: List<Room>
 ) : ArrayAdapter<Room>(mContext, resId, mList) {
 
+//    재사용성에서고려해서(메모리등록-객체화) 실행주는 주체
     val inf = LayoutInflater.from(mContext)
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+
+//        null체크확인
         var nullCheckConvertView = convertView
         if (nullCheckConvertView == null) nullCheckConvertView =
             inf.inflate(R.layout.room_list_item, null)
-
+//        재사용성을 고려해서 모든 확인이 끝난상황에서 row 대입
         val row = nullCheckConvertView!!
 
 //        STEP7.데이터 적용
@@ -33,8 +36,10 @@ class RoomAdapter(
         var addressAndFloorTxt = row.findViewById<TextView>(R.id.addressAndFloorTxt)
         var descTxt = row.findViewById<TextView>(R.id.descTxt)
 
+//        화면에 뿌려질 근거데이터 / 기능을 갖고있는 변수를 상황에 맞게 가져오자
         var data = mList[position]
 
+//        실제 데이터를 화면에 반영
 //        priceTxt.text = data.price.toString()
 //        if (data.price >= 10000) {
 //            val hm = data.price / 10000 //정수계산은 정수
